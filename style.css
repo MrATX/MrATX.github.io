@@ -14,7 +14,37 @@ div {
   padding: 1px;
 }
 
-page-header{
+.page-header{
   margin-top:0px;
   margin-bottom:20px;
+  border-style:none;
+  color:teal;
+}
+
+.collapse navbar-collapse{
+  border-style:none;
+}
+
+#navbarSupportedContent{
+  border-style:none;
+}
+
+.dropdown-item{
+  color:teal;
+}
+
+.nav-link{
+  color:teal;
+}
+
+#navolink{
+}
+
+.btn{
+  color:maroon;
+  border-color:black;
+}
+
+#indexlink{
+  color:teal;
 }
