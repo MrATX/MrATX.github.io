@@ -30,12 +30,9 @@ div {
 }
 
 .dropdown-item{
-  color:teal;
+  color:maroon;
 }
 
-.nav-link{
-  color:teal;
-}
 
 #navolink{
 }
@@ -46,5 +43,12 @@ div {
 }
 
 #indexlink{
-  color:teal;
+  color:rebeccapurple;
+}
+
+.bg{
+  background-image:urL(ATX.jpeg);
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
 }
