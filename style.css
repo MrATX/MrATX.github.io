@@ -53,3 +53,17 @@ div {
   background-repeat:no-repeat;
   background-size:cover;
 }
+
+.container-fluid,.row,.col-md-3{
+  border:none;
+}
+
+#project-col{
+  border:solid;
+  border-color: darkcyan;
+  text-align: center;
+}
+
+#project-section{
+  margin:25px;
+}
