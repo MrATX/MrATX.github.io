@@ -54,7 +54,7 @@ div {
   background-size:cover;
 }
 
-.container-fluid,.row,.col-md-3{
+.container-fluid,.row,.col-md-2{
   border:none;
 }
 
@@ -66,4 +66,9 @@ div {
 
 #project-section{
   margin:25px;
+}
+
+#project-header{
+  background-color: darkcyan;
+  color:white;
 }
