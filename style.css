@@ -73,3 +73,8 @@ div {
   background-color: darkcyan;
   color:white;
 }
+
+#gitlink{
+  font-size:smaller;
+  color:slategray;
+}
