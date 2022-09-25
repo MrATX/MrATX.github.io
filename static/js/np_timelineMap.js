@@ -8,29 +8,45 @@ function createvisitsMap(data) {
         "features":[]
     }
     // create arrays of years in data and park names to loop through
-    var year_list = data[0].years;
-    var park_list = data[0].parks;
+    // var year_list = data[0].years;
+    // var park_list = data[0].parks;
+    var year_list = data.years;
+    var park_list = data.parks;
     // loop to populate featureCollection
     year_list.forEach(year=>{
         park_list.forEach(park=>{
             var endYear = String(parseInt(year) + 1);
-            if(data[0][park]["year_established"]<=year){
+            // if(data[0][park]["year_established"]<=year){
+            if(data[park]["year_established"]<=year){
+                // let featureLoop = {
+                //     "type":"Feature",
+                //     "properties":{
+                //         "park_name":data[0][park]["park_name"],
+                //         "region":data[0][park]["region"],
+                //         "state":data[0][park]["state"],
+                //         "date_established":data[0][park]["date_established"],
+                //         "start":year,
+                //         "end":endYear,
+                //         "visits":data[0][park]["visits"][year],
+                //         "description":data[0][park]["description"]
+                //     },
                 let featureLoop = {
                     "type":"Feature",
                     "properties":{
-                        "park_name":data[0][park]["park_name"],
-                        "region":data[0][park]["region"],
-                        "state":data[0][park]["state"],
-                        "date_established":data[0][park]["date_established"],
+                        "park_name":data[park]["park_name"],
+                        "region":data[park]["region"],
+                        "state":data[park]["state"],
+                        "date_established":data[park]["date_established"],
                         "start":year,
                         "end":endYear,
-                        "visits":data[0][park]["visits"][year],
-                        "description":data[0][park]["description"]
+                        "visits":data[park]["visits"][year],
+                        "description":data[park]["description"]
                     },
                     "geometry":{
                         "type":"Point",
-                        "coordinates":[data[0][park]["lon"],data[0][park]["lat"]]
-                    }
+                        // "coordinates":[data[0][park]["lon"],data[0][park]["lat"]]
+                        "coordinates":[data[park]["lon"],data[park]["lat"]]
+                    },
                 }
                 featureCollection.features.push(featureLoop);
             }
@@ -59,7 +75,9 @@ function createvisitsMap(data) {
     map.addControl(slider);
     // create custom markers with tree icons
     var customMarker = L.icon({
-        iconUrl:'../static/images/tree_marker.png',
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        iconUrl:'static/images/tree_marker.png',
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         iconSize:[33,33]
       });
     // create markers layer with custom markers & popup info
@@ -102,7 +120,7 @@ function createvisitsMap(data) {
 }
 // ----------------------------------------------------\\
 // Main function call with data from parks_data approute
-d3.json("parks_data").then(data => 
+d3.json("https://mratx.github.io/park_info.json").then(data => 
 createvisitsMap(data)
 );
 // ========================================================== \\
