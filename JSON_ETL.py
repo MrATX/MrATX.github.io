@@ -1,19 +1,19 @@
 import json
  
-# Data to be written
-dictionary = {
-    "name": "iPwn",
-    "idno": 420,
-    "role": "Studio Director",
-    "phonenumber": "5558675309"
-}
+# # Data to be written
+# dictionary = {
+#     "name": "iPwn",
+#     "idno": 420,
+#     "role": "Studio Director",
+#     "phonenumber": "5558675309"
+# }
  
-# Serializing json
-json_object = json.dumps(dictionary, indent=4)
+# # Serializing json
+# json_object = json.dumps(dictionary, indent=4)
  
-# Writing to sample.json
-with open("sample.json", "w") as outfile:
-    outfile.write(json_object)
+# # Writing to sample.json
+# with open("sample.json", "w") as outfile:
+#     outfile.write(json_object)
 
 
 
@@ -120,22 +120,29 @@ for i in parks_month_data["Park_Name"]:
     np_data_month[i]=(wip_dict)
 #np_data_month is now a dict of dicts holding all of the information
 
+# Turning dicts of dicts into JSON objects
+park_info = json.dumps(np_data)
+park_months = json.dumps(np_data_month)
+
+# Saving JSON objects to local files
+with open("park_info.json", "w") as outfile:
+    outfile.write(park_info)
+with open("park_months.json", "w") as outfile:
+    outfile.write(park_months)
 
 
-
-
-#np_data is now a dict of dicts holding all of the information
-#PUSH np_data dict of dicts to MongoDB
-conn = 'mongodb://localhost:27017'
-client = pymongo.MongoClient(conn)
-# define the database
-db = client.national_parks_db
-# define collections
-# annual data & stats
-park_info = db.park_info
-park_info.drop()
-park_info.insert_one(np_data)
-# monthly data
-park_months = db.park_months
-park_months.drop()
-park_months.insert_one(np_data_month)
+# #np_data is now a dict of dicts holding all of the information
+# #PUSH np_data dict of dicts to MongoDB
+# conn = 'mongodb://localhost:27017'
+# client = pymongo.MongoClient(conn)
+# # define the database
+# db = client.national_parks_db
+# # define collections
+# # annual data & stats
+# park_info = db.park_info
+# park_info.drop()
+# park_info.insert_one(np_data)
+# # monthly data
+# park_months = db.park_months
+# park_months.drop()
+# park_months.insert_one(np_data_month)
