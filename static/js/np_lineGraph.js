@@ -1,17 +1,23 @@
 // Build a function for the charts
 function chartBuilder(park_name) {
     // Pull in data from samples.json  
-    d3.json('/parks_data').then((data) => {
-        // var park_name = d3.select("#selDataset").node().value;
+    // d3.json('/parks_data').then((data) => {
+      d3.json('https://mratx.github.io/park_info.json').then((data) => {
+        var park_name = d3.select("#selDataset").node().value;
         // console.log(park_name);
       var visits_list = [];
       var specific_year = [];
-      var years_list = data[0].years
+      // var years_list = data[0].years
+      var years_list = data.years
       years_list.forEach(year => {
-        if ((data[0][park_name]['visits'][year]) > 0) {
-            visits_list.push(data[0][park_name]['visits'][year]);
-            specific_year.push(year)
-        }
+        // if ((data[0][park_name]['visits'][year]) > 0) {
+        //     visits_list.push(data[0][park_name]['visits'][year]);
+        //     specific_year.push(year)
+        // }
+        if ((data[park_name]['visits'][year]) > 0) {
+          visits_list.push(data[park_name]['visits'][year]);
+          specific_year.push(year)
+      }
       });
       console.log(years_list)
       console.log(visits_list)
@@ -54,8 +60,10 @@ function init() {
     // Grab a reference to the dropdown select element
     var selector = d3.select("#selDataset");
     // Use the list of sample names to populate the select options
-    d3.json('/parks_data').then((data) => {
-      var parkNames = data[0].parks;
+    // d3.json('/parks_data').then((data) => {
+      d3.json('https://mratx.github.io/park_info.json').then((data) => {
+      // var parkNames = data[0].parks;
+      var parkNames = data.parks;
       parkNames.forEach((park_name) => {
         selector
           .append("option")
@@ -63,7 +71,8 @@ function init() {
           .property("value", park_name);
       });
       // Use the first sample from the list to build the initial plots
-      var firstPark = parkNames[0];
+      // var firstPark = parkNames[0];
+      var firstPark = parkNames;
       chartBuilder(firstPark);
     });
   }

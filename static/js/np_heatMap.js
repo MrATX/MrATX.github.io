@@ -6,13 +6,16 @@ function getPointCategoryName(point, dimension) {
 } 
 
 
-d3.json("park_months").then(data=>
+// d3.json("park_months").then(data=>
+d3.json("https://mratx.github.io/park_months.json").then(data=>
     arrayLoop(data)
 );
     function arrayLoop(data){
         masterArray = [];
-        var months = data[0].months;
-        var parks = data[0].parks;
+        // var months = data[0].months;
+        // var parks = data[0].parks;
+        var months = data.months;
+        var parks = data.parks;
         // console.log(parks);
         months.forEach(month=>{
             if(month=="January"){
@@ -29,7 +32,8 @@ d3.json("park_months").then(data=>
                 else{
                     parkWIP = parkWIP + 1;
                 }
-                addressWIP = [monthWIP,parkWIP,data[0][park][month]]
+                // addressWIP = [monthWIP,parkWIP,data[0][park][month]]
+                addressWIP = [monthWIP,parkWIP,data[park][month]]
                 masterArray.push(addressWIP);
             })
         })
