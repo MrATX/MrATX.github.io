@@ -35,24 +35,39 @@
 
 
 function posterz(data){
-    console.log(data)
-    console.log(data["Big Bend"].img_url)
-    for(i in data){
-        if(i != "parks" || i != "years"){
-            console.log(data[i].img_url)
-            j = "https://mratx.github.io/static/images/posters/" + i.img_url + ".png"
-            // temp
-            l = data[i].img_url
-            //temp
+    console.log(data["Acadia"].img_url)
+    null_pics = ["parks","years","gates_of_the_arctic","katmai","kenai_fjords","kobuk_valley","lake_clark","wrangell-st_elias"]
+    for(i in data.parks){
+        park_wip = data[data.parks[i]]
+        if(null_pics.includes(park_wip.img_url)){
+            console.log("yoooooooo")
+        }
+        else{
+            j = "https://mratx.github.io/static/images/posters/" + park_wip.img_url + ".png"
             d3.select("#posterrow")
                 .append("div")
-                .attr("class","row")
+                .attr("class","col-md-1")
                 .attr("id","postercol")
                 .append("a")
                 .attr("href",j)
+                .attr("target","_blank")
                 .append("img")
-                .attr("src",l)
+                .attr("src",j)
+                .attr("id","poster")
         }
+        // if(i != "parks" || i != "years"){
+        //     j = "https://mratx.github.io/static/images/posters/" + park_wip.img_url + ".png"
+        //     d3.select("#posterrow")
+        //         .append("div")
+        //         .attr("class","col-md-1")
+        //         .attr("id","postercol")
+        //         .append("a")
+        //         .attr("href",j)
+        //         .attr("target","_blank")
+        //         .append("img")
+        //         .attr("src",j)
+        //         .attr("id","poster")
+        // }
 
     }
 }
