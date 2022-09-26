@@ -96,6 +96,15 @@ font-weight: 300;
   background-image:linear-gradient(to right,
   #ccc,#333,#CCC)
 }
+#posterholder{
+  margin-top: 20px;
+  margin-bottom: auto;
+  background-color: #555;
+}
+#posterrow1{
+  margin-top: 10px;
+  display: inline-flex;
+}
 #poster{
   width:100%;
   height:100%;
@@ -103,6 +112,8 @@ font-weight: 300;
 }
 #postercol{
   align-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 #bodypara{
   font-size: large;

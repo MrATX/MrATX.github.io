@@ -22,7 +22,8 @@
     <div class="row" id="titlerow" style="margin:none;">
       <div class="col-md-1"></div>
       <div class="col-md-10">
-        <img src="https://di-uploads-pod4.dealerinspire.com/fiatoftacoma/uploads/2018/12/Depositphotos_33075035_xl-2015.jpg" style="width:75%;margin-top:10px">
+        <!-- <img src="https://di-uploads-pod4.dealerinspire.com/fiatoftacoma/uploads/2018/12/Depositphotos_33075035_xl-2015.jpg" style="width:75%;margin-top:10px"> -->
+        <img src="static/images/rainier.jpg" style="width:75%;margin-top:10px">
         <h1 id="title">National Parks of the USA</h1>
         <hr id="breaker">
         <p id="bodypara">
@@ -36,7 +37,8 @@
       </div>
     </div>
     <!--==============-->
-    <div class="row" id="posterrow">
+    <div id="posterholder" class="container-fluid">
+    <div class="row" id="posterrow1"></div>
     </div>
     <!-- VISUALIZATION-->
     <!-- {% for i in data.parks %} -->
@@ -179,12 +181,13 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- Local JS -->
-    <script src="./static/js/np_parkboundariesMap.js"></script>
-    <script src="./static/js/np_lineGraph.js"></script>
+    <script src="static/js/np_parkboundariesMap.js"></script>
+    <script src="static/js/np_lineGraph.js"></script>
     <script src="static/js/np_timelineMap.js"></script>
     <script src="static/js/leaflet.timeline.js"></script>
-    <script src="./static/js/np_heatMap.js"></script>
-    <script src="./static/js/np_testerz.js"></script>
+    <script src="static/js/np_heatMap.js"></script>
+    <script src="static/js/np_posterz.js"></script>
+    <!-- <script src="./static/js/np_testerz.js"></script> -->
 
   </body>
 </html>
