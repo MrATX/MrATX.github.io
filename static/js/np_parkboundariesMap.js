@@ -26,7 +26,8 @@ accessToken: API_KEY
 
 // pull in data from API endpoint
 // ------------------------------
-d3.json("/park_boundaries").then(data => {
+// d3.json("/park_boundaries").then(data => {
+  d3.json("https://mratx.github.io/data/nps_geo_boundary.json").then(data => {
 // console.log(data)
 
 // filter coordinate data to exclude anything besides national parks

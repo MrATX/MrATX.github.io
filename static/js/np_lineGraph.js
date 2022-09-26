@@ -19,8 +19,8 @@ function chartBuilder(park_name) {
           specific_year.push(year)
       }
       });
-      console.log(years_list)
-      console.log(visits_list)
+      // console.log(years_list)
+      // console.log(visits_list)
       // Build a Line chart of park visits
       let lineData = [
       {

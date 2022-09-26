@@ -37,7 +37,7 @@ d3.json("https://mratx.github.io/park_months.json").then(data=>
                 masterArray.push(addressWIP);
             })
         })
-        console.log(masterArray);
+        //console.log(masterArray);
 
 
     Highcharts.chart('container', {
