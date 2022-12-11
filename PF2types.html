@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <title>Poke Fight II - Types</title>
+  <link rel="shortcut icon" type="image/jpg" href="static/images/pokeball.png"/>
+<!-- Bootstrap & Local CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="static/css/style_redo.css">
+  <!--NAVBAR--------------------------------------------------------------------->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="PF2index.html" style="color:gold;">Poke Fight II</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="PF2index.html" id="navolink"><u>Play</u></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="PF2pokedex.html" id="navolink">Pokedex</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="PF2types.html" id="navolink">Types</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="PF2info_menu.html" id="navolink">Info</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<!--NAVBAR END------------------------------------------------------------------->
+<!-- Close Header -->
+</head>
+
+
+<body id="body">
+<div class="container-fluid">
+   <!-- Tab links -->
+  <div class="tab">
+    <button class="tablinks" id="singletype_tab" onclick="swapTabs(event, 'single_type')">Single Type Matchups</button>
+    <button class="tablinks" id="dualtype_tab" onclick="swapTabs(event, 'dual_type')">Dual Type Matchups</button>
+  </div>
+  <!-- Single Type Table -->
+  <div id="single_type" class="tabcontent">
+    <div class="typechart_text">
+      (Left Type is Attacker; Top is Defender; Number is Damage Coeffecient for Attack; Black squares have Damage Coeffecients of 1)
+    </div>
+    <div class="typetable_wrapper">
+      <table class="single_type_table" style="width:100%;">
+          <thead class="single_type_header"></thead>
+          <tbody class="single_type_body"></tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Dual Type Table -->
+  <div id="dual_type" class="tabcontent">
+    <div class="typechart_text">
+      (Left Type is Attacker; Top is Defender; Number is Damage Coeffecient for Attack; Black squares have Damage Coeffecients of 1)
+      <br>
+      <label class="type1sel_label" for="type1">Select Type 1</label>
+      <select class="typetable_type1sel" name="type1" onchange="dual_types_filter_change()"></select>
+    </div>
+    <div class="typetable_wrapper">
+      <table class="dual_type_table" style="width:100%;">
+          <thead class="dual_type_header"></thead>
+          <tbody class="dual_type_body"></tbody>
+      </table>
+    </div>
+  </div>
+<!-- Close Container -->
+</div>
+
+
+<!-- Web Depenencies -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+<!-- Local JS -->
+<script src="static/js/PF2types.js"></script>
+<!-- Close Body -->
+</body>
+<!-- Close HTML -->
+</html>

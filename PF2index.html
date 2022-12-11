@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <title>Poke Fight II</title>
+  <link rel="shortcut icon" type="image/jpg" href="static/images/pokeball.png"/>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="static/css/style_redo.css">
+
+  <!--NAVBAR--------------------------------------------------------------------->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="PF2index.html" style="color:gold;">Poke Fight II</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="PF2index.html" id="navolink"><u>Play</u></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="PF2pokedex.html" id="navolink">Pokedex</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="PF2types.html" id="navolink">Types</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="PF2info_menu.html" id="navolink">Info</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  <!--NAVBAR END------------------------------------------------------------------->
+
+</head>
+
+<body id="body">
+
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h1 id="jumbotitle" style="font-size:xxx-large;">
+            Poke Fight II
+        </h1>
+        <p style="color:purple;">
+          version 1.0
+        </p>
+        <!-- <hr> -->
+        <!-- Original WIP paragraph; keeping for nostalgia for now -->
+        <!-- <p id="jumbopara">
+            This is currently a work in progress, but I'm attempting to convert
+            a previous text-based Pokemon fighting game I wrote in Python to an
+            online GUI-based game with JavaScript backend functionality. It is a side
+            project to work, school, job-hunting, life, etc so may be slow going but
+            all in good time. Then the stretch goal is to make it multiplayer locally,
+            as well as online from different machines 0_0. We'll see. iPwn.
+        </p> -->
+        <!-- <p id="jumbopara"> 2nd WIP Paragraph from once game was functioning
+          This is now a functioning Pokemon fighting game (for 2 player local only at this time).
+          Many new features are in the works including single player vs AI opponents, and much
+          polish is needed still. But for now, it works start to finish with no significant bugs
+          or issues at the time of writing this (5/3/21). So, enjoy!
+        </p> -->
+        <!-- <p id="jumbopara">
+          Enjoy!
+        </p> -->
+    </div>
+    <div class="row" id="buttons">
+        <button id="playbtn" onclick="window.location.href='match_setup';" style="width:85%;height:250px;">
+            <h1>Play a Match</h1>
+            <p style="font-size:small;font-weight:normal;">(two player local play only at this time)</p>
+        </button>
+    </div>
+    <!-- <div class="row" id="buttons">
+      <button id="playbtn" onclick="window.location.href='pokedex';">
+          Inspect Pokedex
+      </button>
+  </div>
+  <div class="row" id="buttons">
+    <button id="playbtn" onclick="window.location.href='types';">
+        View Type Matchups
+    </button>
+</div>
+<div class="row" id="buttons">
+  <button id="playbtn" onclick="window.location.href='info_menu';">
+      How to Play
+  </button> -->
+</div>
+</div>
+
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+</body>
+
+</html>

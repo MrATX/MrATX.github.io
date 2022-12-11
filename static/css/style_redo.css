@@ -1,0 +1,399 @@
+/* The ordering of the variables and stuffs is a bit off; could use some reorganizing but not a priority */
+
+div,#p1rosterdiv,#p2rosterdiv{
+    text-align:center;
+    justify-content:center;
+    align-items:center;
+    vertical-align:middle;
+}
+.col-md-2{
+    text-align:center;
+}
+.navbar-brand{
+    cursor:pointer;
+}
+.jumbotron{
+    background-color:burlywood;
+    color:teal;
+}
+#victor{
+    color:maroon;
+}
+#body{
+    background-color:black;
+}
+#navolink{
+    color:white;
+}
+button{
+    background-color:teal;
+    color:white;
+    font-weight:bold;
+}
+/* TYPE CHARTS --------------------------------------------------------------------- */
+/* TAB STUFFS ----------------------------- */
+ /* Style the tab */
+ .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    justify-content:center;
+    text-align:center;
+  }
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color:teal;
+  }
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color:teal;
+    font-size:larger;
+    font-weight:bolder;
+    color:white;
+  }
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    /* background-color:burlywood; */
+  }
+  .tabcontent_info{
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    color:white;
+  }
+.tablinks{
+    font-size:large;
+    text-align:center;
+    width:50%;
+    color:grey;
+}
+.tablinks_info{
+    font-size:large;
+    text-align:center;
+    width:25%;
+    color:grey;
+}
+/* Table Stuffs */
+.typetable_type1sel{
+    font-size:larger;
+}
+.type1sel_label{
+    color:white;
+}
+.typechart_text{
+    text-align:center;
+    color:burlywood;
+    border:1px solid teal;
+}
+.typetable_wrapper,.rosterselect_wrapper{
+    overflow-y:auto;
+    overflow-x:auto;
+    height:666px;
+    position:sticky;
+    top:0;
+}
+thead{
+    position:sticky;
+    top:0;
+}
+.typetable_col0{
+    position:sticky;
+    left:0;
+}
+.typetable_col0,.typetable_row0{
+    text-align:center;
+    color:white;
+    font-weight:bold;
+    position:sticky;
+    background-color:black;
+}
+tbody,thead{
+    vertical-align:middle;
+}
+.typetable_data{
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    color:maroon;
+    font-weight:bold;
+}
+#single_dmg{
+    color:black;
+}
+#no_dmg,#quarter_dmg, #half_dmg, #double_dmg, #quadruple_dmg{
+    vertical-align:middle;
+    text-align:center;
+    font-weight:bold;
+    font-size:large;
+    color:white;
+    border:1px solid black;
+  }
+#no_dmg{
+    background-color:rgb(255,0,0,0.5);
+}
+#quarter_dmg{
+    background-color:rgb(255,165,0,0.5);
+}
+#half_dmg{
+    background-color:rgb(255,255,0,0.5);
+}
+#double_dmg{
+    background-color:rgb(0,255,0,0.5);
+}
+#quadruple_dmg{
+    background-color:rgb(0,0,255,0.5);
+}
+.typetable_typeimg{
+    width:66px;
+}
+/* END TYPE CHARTS ------------------------------------------------------------------ */
+
+/* POKEDEX --------------------------------------------------------------------- */
+.pokedex_filter{
+    justify-content:center;
+    text-align:center;
+    color:black;
+}
+#pokedex_filter{
+    justify-content:center;
+    text-align:center;
+    border:1px solid teal;
+    background-color:burlywood;
+}
+#filter_title{
+    display:table-cell;
+    margin-right:10px;
+    font-weight:bold;
+    color: maroon;
+}
+#filter_button_main{
+    margin:20px;
+    font-size:larger;
+}
+.pokedex_filter_label{
+    font-size:large;
+}
+.checkbox{
+    margin-right:15px;
+    margin-left:15px;
+}
+.checkmark{
+    font-size:x-large;
+}
+.type_filter_button{
+    justify-content:center;
+    text-align:center;
+}
+.typefilter_typeimg{
+    width:50px;
+    margin-right:15px;
+    background-color:none;
+    border:none;
+}
+.typefilter_typeimg_checked{
+    width:50px;
+    margin-right:15px;
+    background-color:black;
+    border:1px solid teal;
+    color:white;
+}
+.pokedex{
+    width:100%;
+}
+.pokedex_typeimg{
+    width:50px;
+    align-items:center;
+}
+.pokedex_header{
+    background-color:burlywood;
+    text-align:center;
+    color:black;
+    font-size:larger;
+}
+.pokedex_row{
+    align-items:center;
+    background-color:none;
+}
+.pokedex_row_checked{
+    align-items:center;
+    background-color:salmon;
+}
+.pokedex_sprite{
+    transform:scale(1.66,1.66);
+}
+td{
+    height:200px;
+}
+.pokedex_name{
+    text-align:center;
+    color:white;
+    font-weight:bold;
+    font-size:larger;
+}
+.pokedex_type{
+    color:white;
+}
+.pokedex_stat{
+    text-align:center;
+    color:white;
+    font-weight:bold;
+    font-size:large;
+}
+/* END POKEDEX ------------------------------------------------------------------ */
+
+/* MATCH SETUP--------------------------------------------------------------------- */
+/* Radios Styling */
+#radios_container,#nameinput_container,#rosterselect_container{
+    width:85%;
+    margin-top:20px;
+}
+#rosterselect_container{
+    width:100%;
+}
+#prompt_jumbo{
+    background-color:maroon;
+}
+.radio_prompt{
+    color:teal;
+}
+.radio{
+    color:black;
+    margin-right:15px;
+    font-size:larger;
+}
+/* Name Input Styling */
+.nameinput{
+    width:85%;
+    font-size:xx-large;
+    text-align:center;
+}
+/* END MATCH SETUP------------------------------------------------------------------ */
+
+/* MATCH ACTIVE--------------------------------------------------------------------- */
+#p1rosterdiv,#p2rosterdiv{
+    text-align:right;
+    color:white;
+}
+#battleinterface{
+    color:white;
+}
+.pokeball{
+    width:100px;
+    margin-right:15px;
+}
+.p1rostersprite,.p2rostersprite{
+    margin-right:15px;
+}
+#p1rostersprites,#p2rostersprites{
+}
+.hidden_vars{
+    display:none;
+}
+.p1rostersprite{
+    transform:scaleX(-1);
+}
+#p1battlesprite{
+    transform:scaleX(-1);
+}
+#p1battlesprite,#p2battlesprite{
+    margin-top:0;
+}
+#p1battlemain, #p2battlemain{
+    border:5px solid purple;
+    height:750px;
+    display:inline-flex;
+    align-items:flex-end;
+    vertical-align:bottom;
+}
+#p1battlecard,#p2battlecard{
+}
+#battlelog{
+    border:5px solid purple;
+    height:750px;
+    align-items:center;
+    align-content:center;
+    justify-content:center;
+}
+#battlelogtitle{
+    border-bottom:2px solid teal;
+}
+#p1battlename{
+    transform:rotate(-90deg);
+}
+#p2battlename{
+    transform:rotate(90deg);
+}
+#battletype{
+    width:50px;
+}
+#buttonimg{
+    width:66px;
+}
+#p1active_ATKtype1,
+#p1active_ATKtype2,
+#p1active_SPATKtype1,
+#p1active_SPATKtype2,
+#p2active_ATKtype1,
+#p2active_ATKtype2,
+#p2active_SPATKtype1,
+#p2active_SPATKtype2{
+    width:50%;
+    background-color:burlywood;
+}
+#p1pokeswap,#p2pokeswap{
+    margin-bottom:20px;
+}
+#battlelogtextbox{
+    overflow-y:scroll;
+    width:100%;
+    height:90%;
+}
+#battlelogtextspan{
+    align-items:center;
+    /* overflow-y:scroll; */
+}
+.battletext{
+    border-bottom:lightgray dotted 1px;
+}
+#sysbattletext{
+    color:gold;
+}
+#p1battletext,#p1battlename{
+    color:teal;
+}
+#p2battletext,#p2battlename{
+    color:mediumvioletred
+}
+#spattacktext{
+    color:purple;
+}
+#KOd{
+    color:maroon;
+}
+.battletext_img{
+    height:25px;
+}
+.pokedex_id{
+    color:pink;
+    /* visibility:hidden; */
+    display:none;
+}
+#minitypeimgs{
+    height:25px;
+}
+/* END MATCH ACTIVE------------------------------------------------------------------ */
