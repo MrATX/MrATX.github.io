@@ -48,7 +48,8 @@ function pokedex_filter(pokedex,headers,combat_vars,t1filter,t2filter,classfilte
         var genfilter = [1,2,3,4,5,6,7,8]
     }
     // Route into data dictionary
-    var pokedex = pokedex[0]["pokedex"]
+    // var pokedex = pokedex[0]["pokedex"]
+    var pokedex = pokedex["pokedex"]
     // Create Array for Filtered Pokemon
     var pokedex_filtered = []
     // Create dummy variable to generate row indexes
@@ -67,9 +68,11 @@ function pokedex_filter(pokedex,headers,combat_vars,t1filter,t2filter,classfilte
         }
     })
     // Grab Headers Array
-    headers = headers[0].pokedex_headers
+    //headers = headers[0].pokedex_headers
+    headers = headers.pokedex_headers
     // Grab Types Array
-    types = combat_vars[0].types_list
+    // types = combat_vars[0].types_list
+    types = combat_vars.types_list
     // Pass filtered array of Pokemon to base function to render table
     pokedex_table(pokedex_filtered,headers)
 }
@@ -80,9 +83,12 @@ function render_pokedex(){
     var t2filter = []
     var classfilter = []
     var genfilter = []
-    d3.json("pokedex_data.json").then(pokedex=>
-        d3.json("match_vars.json").then(match_vars=>
-            d3.json("combat_vars.json").then(combat_vars=>
+    // d3.json("pokedex_data.json").then(pokedex=>
+    d3.json("https://mratx.github.io/pokedex_data.json").then(pokedex=>
+        // d3.json("match_vars.json").then(match_vars=>
+        d3.json("https://mratx.github.io/match_vars.json").then(match_vars=>
+            // d3.json("combat_vars.json").then(combat_vars=>
+            d3.json("https://mratx.github.io/combat_vars.json").then(combat_vars=>
                 pokedex_filter(pokedex,match_vars,combat_vars,t1filter,t2filter,classfilter,genfilter)    
                 )
             )
@@ -91,7 +97,8 @@ function render_pokedex(){
 // Render Filters
 // Type 1 & Type 2
 function render_type_filters(combat_vars,type_no){
-    types = combat_vars[0].types_list
+    // types = combat_vars[0].types_list
+    types = combat_vars.types_list
     var title = "Type"+type_no
     selection = "type"+type_no+"_filter"
     d3.select(selection)
@@ -141,7 +148,8 @@ function click_typeimg(id){
 }
 // Weight Class
 function render_weight_class_filter(match_vars){
-    weight_class = match_vars[0].radios.weight_class
+    // weight_class = match_vars[0].radios.weight_class
+    weight_class = match_vars.radios.weight_class
     d3.select("weight_class_filter")
         .append("div")
         .attr("class","row")
@@ -164,7 +172,8 @@ function render_weight_class_filter(match_vars){
 }
 // Generation
 function render_generation_filter(match_vars){
-    generations = match_vars[0].radios.generation
+    // generations = match_vars[0].radios.generation
+    generations = match_vars.radios.generation
     d3.select("generation_filter")
         .append("div")
         .attr("class","row")
@@ -221,9 +230,12 @@ function clear_filters(){
 }
 // Base function to render filtered Pokedex
 function render_filtered_pokedex(t1filter,t2filter,classfilter,genfilter){
-    d3.json("pokedex_data.json").then(pokedex=>
-        d3.json("match_vars.json").then(match_vars=>
-            d3.json("combat_vars.json").then(combat_vars=>
+    // d3.json("pokedex_data.json").then(pokedex=>
+    d3.json("https://mratx.github.io/pokedex_data.json").then(pokedex=>
+        // d3.json("match_vars.json").then(match_vars=>
+        d3.json("https://mratx.github.io/match_vars.json").then(match_vars=>
+            // d3.json("combat_vars.json").then(combat_vars=>
+            d3.json("https://mratx.github.io/combat_vars.json").then(combat_vars=>
                 pokedex_filter(pokedex,match_vars,combat_vars,t1filter,t2filter,classfilter,genfilter)    
                 )
             )
@@ -269,15 +281,19 @@ function filtered_pokedex(){
 }
 // Call functions to render Filters & Pokdex on page load
 render_pokedex()
-d3.json("combat_vars.json").then(combat_vars=>
+// d3.json("combat_vars.json").then(combat_vars=>
+d3.json("https://mratx.github.io/combat_vars.json").then(combat_vars=>
     render_type_filters(combat_vars,"1")
     )
-d3.json("combat_vars.json").then(combat_vars=>
+// d3.json("combat_vars.json").then(combat_vars=>
+d3.json("https://mratx.github.io/combat_vars.json").then(combat_vars=>
     render_type_filters(combat_vars,"2")
     )
-d3.json("match_vars.json").then(match_vars=>
+// d3.json("match_vars.json").then(match_vars=>
+d3.json("https://mratx.github.io/match_vars.json").then(match_vars=>
     render_weight_class_filter(match_vars)
     )
-d3.json("match_vars.json").then(match_vars=>
+// d3.json("match_vars.json").then(match_vars=>
+d3.json("https://mratx.github.io/match_vars.json").then(match_vars=>
     render_generation_filter(match_vars)
     )
