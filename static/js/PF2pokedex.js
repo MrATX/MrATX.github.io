@@ -1,3 +1,21 @@
+// Function to capitalize first letter of word
+// --- need to do this to get img_urls to work with github conversion
+function capitalizePokemonName(str) {
+
+    // converting first letter to uppercase
+    const capitalized = "static/images/PokePics/" + str.charAt(23).toUpperCase() + str.slice(24);
+
+    return capitalized;
+}
+
+// take input
+string = "static/images/PokePics/venusaur.gif"
+
+const result = capitalizePokemonName(string);
+
+console.log(result);
+
+
 // Base function rendering table with given list of Pokemon
 function pokedex_table(pokedex,headers){
     for(var i=0,length=headers.length;i<length;i++){
@@ -12,7 +30,7 @@ function pokedex_table(pokedex,headers){
         .append("tr")
         .attr("class","pokedex_row")
         .html(d => `<td class="pokedex_stat">${d.num}</td>
-            <td><img src='${d.img_url}' class="pokedex_sprite"></td>
+            <td><img src='${capitalizePokemonName(d.img_url)}' class="pokedex_sprite"></td>
             <td class="pokedex_name">${d.name}</td>
             <td class="pokedex_type"><img src="${d.type1img}" class="pokedex_typeimg"><br>${d.type1}</td>
             <td class="pokedex_type"><img src="${d.type2img}" alt="" class="pokedex_typeimg"><br>${d.type2}</td>
@@ -124,7 +142,8 @@ function render_type_filters(combat_vars,type_no){
     for(var i=0,length=types.length;i<length;i++){
         var img_name = "type"+type_no
         var img_id = types[i]+"_type"+type_no+"_filter"
-        var img_url = "static/images/type_imgs/" + types[i] + ".png"
+        // var img_url = "static/images/type_imgs/" + types[i] + ".png"
+        var img_url = "static/images/type_imgs/" + types[i].toLowerCase() + ".png"
         d3.select(selection)
             .select(".row")
             .append("img")
@@ -268,7 +287,7 @@ function grab_filter_vars(t1filter,t2filter,classfilter,genfilter){
                 t2filter.push(typesel[i].title)
             }
     }
-    console.log(t1filter,t2filter,classfilter,genfilter)
+    // console.log(t1filter,t2filter,classfilter,genfilter)
     render_filtered_pokedex(t1filter,t2filter,classfilter,genfilter)
 }
 // Outer function to clear arrays then grab vars & render filtered Pokedex
