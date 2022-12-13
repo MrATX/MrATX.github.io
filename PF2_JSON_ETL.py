@@ -18,7 +18,20 @@ for i in range(0,totalpoke):
     #     pokemon.iloc[i,16] = f"https://projectpokemon.org/images/sprites-models/swsh-normal-sprites/{pokemon.iloc[i,14]}.gif"
     # if pokemon.iloc[i,14] not in image_exceptions:
     #     pokemon.iloc[i,16] = f"https://projectpokemon.org/images/normal-sprite/{pokemon.iloc[i,14]}.gif"
-    pokemon.iloc[i,16] = f"static/images/PokePics/{pokemon.iloc[i,14]}.gif"
+
+    
+    # **************************************************************************************************
+    # Need to add in check for if there's a dash, leave it be, if not then capitalize the Pokemon's name
+    name_cap = pokemon.iloc[i,14].capitalize()
+    print(name_cap)
+    if "-" in pokemon.iloc[i,14]:
+        pokemon.iloc[i,16] = f"static/images/PokePics/{pokemon.iloc[i,14]}.gif"
+    else:
+        pokemon.iloc[i,16] = f"static/images/PokePics/{name_cap}.gif"
+    
+    #pokemon.iloc[i,16] = f"static/images/PokePics/{pokemon.iloc[i,14]}.gif"
+    # **************************************************************************************************
+
     # Previously used static images; missing images for expanded Pokedex, should still work fine for most Pokemon though
     # pokemon.iloc[i,16] = f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{pokemon.iloc[i,0].item()}.png"
     if pokemon.iloc[i,12] == "Yes":

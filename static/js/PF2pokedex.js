@@ -30,7 +30,7 @@ function pokedex_table(pokedex,headers){
         .append("tr")
         .attr("class","pokedex_row")
         .html(d => `<td class="pokedex_stat">${d.num}</td>
-            <td><img src='${capitalizePokemonName(d.img_url)}' class="pokedex_sprite"></td>
+            <td><img src='${d.img_url}' class="pokedex_sprite"></td>
             <td class="pokedex_name">${d.name}</td>
             <td class="pokedex_type"><img src="${d.type1img}" class="pokedex_typeimg"><br>${d.type1}</td>
             <td class="pokedex_type"><img src="${d.type2img}" alt="" class="pokedex_typeimg"><br>${d.type2}</td>
@@ -44,6 +44,7 @@ function pokedex_table(pokedex,headers){
             <td class="pokedex_stat">${d.generation}</td>
             <td class="pokedex_stat">${d.legendary}`)
 }
+// <td><img src='${capitalizePokemonName(d.img_url)}' class="pokedex_sprite"></td>
 // Middle Function generating list of Pokemon based on chosen filters
 function pokedex_filter(pokedex,headers,combat_vars,t1filter,t2filter,classfilter,genfilter){
     // Grab table body & header, and clear rows
