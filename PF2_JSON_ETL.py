@@ -11,7 +11,9 @@ pokemon["type1img"] = "hold"
 pokemon["type2img"] = "hold"
 totalpoke = pokemon.index.nunique()
 pokemon = pokemon.fillna(" - ")
-image_exceptions = ["slowbro-galar","sirfetchd","kubfu","urshifu","urshifu-rapid-strike","zarude"]
+# image_exceptions = ["slowbro-galar","sirfetchd","kubfu","urshifu","urshifu-rapid-strike","zarude"]
+img_url_exception = ["nidoran_f","nidoran_m","farfetchd","mr.mime","Porygon-z","meowstic","typenull","Jangmo-o","Kommo-o","Hakamo-o","tapukoko",
+                        "tapulele","tapubulu","tapufini","sirfetchd","mr.rime","eiscue","indeedee"]
 for i in range(0,totalpoke):
     # Outdated image referencing; now pulling from local images and .png names changed appropriately
     # if pokemon.iloc[i,14] in image_exceptions:
@@ -24,7 +26,7 @@ for i in range(0,totalpoke):
     # Need to add in check for if there's a dash, leave it be, if not then capitalize the Pokemon's name
     name_cap = pokemon.iloc[i,14].capitalize()
     print(name_cap)
-    if "-" in pokemon.iloc[i,14]:
+    if "-" in pokemon.iloc[i,14] or pokemon.iloc[i,14] in img_url_exception:
         pokemon.iloc[i,16] = f"static/images/PokePics/{pokemon.iloc[i,14]}.gif"
     else:
         pokemon.iloc[i,16] = f"static/images/PokePics/{name_cap}.gif"
