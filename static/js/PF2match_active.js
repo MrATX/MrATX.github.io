@@ -1003,9 +1003,9 @@ function sigma_battle_interface(data){
     window.scrollTo(0,58)
 }
 // Call Aggregate Function to render Rosters & Battle interface
-d3.json("/combat_vars").then(combat_vars=>
+d3.json("https://mratx.github.io/combat_vars.json").then(combat_vars=>
     generate_typematchups(combat_vars)
     )
-d3.json("/pokedex_data").then(data=>
+d3.json("https://mratx.github.io/pokedex_data.json").then(data=>
     sigma_battle_interface(data)
     )
